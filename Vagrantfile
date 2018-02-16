@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "setup/boot.sh"
   
   # Install Mongo and add seed
+  config.vm.provision "file", source: "mongo-seed", destination: "/tmp/mongo-seed"
   config.vm.provision "shell", path: "setup/mongo.sh"
   
   # Install Apache as springboard for Loris
