@@ -27,15 +27,13 @@ Vagrant.configure("2") do |config|
   # Install Loris
   config.vm.provision "shell", path: "setup/loris.sh"
   
-  # Install Pipenv
-  config.vm.provision "shell", path: "setup/pipenv.sh"
-  
   # Install IIIF API
   if Dir.exist?("iiifAPI")
 	config.vm.provision "shell", inline: 'echo "Provisioning IIIF API from local source..."'
 	config.vm.provision "file", source: "iiifAPI", destination: "/home/vagrant/iiifAPI"
+	config.vm.provision "shell", inline: 'mv /home/vagrant/iiifAPI /var/www/iiifAPI'
   end
-  config.vm.provision "shell", privileged: false, path: "setup/iiifapi.sh"
+  config.vm.provision "shell", path: "setup/iiifapi.sh"
   
   # Start IIIF API (Run on start)
   config.vm.provision "shell", run: 'always', inline: <<-SHELL
