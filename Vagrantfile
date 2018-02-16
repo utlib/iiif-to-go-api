@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
   # Forwarded ports
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   config.vm.network "forwarded_port", guest: 81, host: 8111
+  config.vm.network "forwarded_port", guest: 80, host: 8222
 
   # VirtualBox settings
   config.vm.provider "virtualbox" do |vb|
@@ -35,6 +36,16 @@ Vagrant.configure("2") do |config|
 	config.vm.provision "shell", inline: 'mv /home/vagrant/iiifAPI /var/www/iiifAPI'
   end
   config.vm.provision "shell", path: "setup/iiifapi.sh"
+  
+  # Install Mirador
+  if Dir.exist?("mirador")
+	config.vm.provision "shell", inline: 'echo "Provisioning Mirador from local source..."'
+	config.vm.provision "file", source: "mirador", destination: "/home/vagrant/mirador"
+	config.vm.provision "shell", inline: 'mv /home/vagrant/mirador /var/www/mirador'
+  end
+  config.vm.provision "shell", path: "setup/mirador.sh"
+  config.vm.provision "file", source: "html-seed/index.html", destination: "/home/vagrant/index.html"
+  config.vm.provision "shell", inline: 'mv /home/vagrant/index.html /var/www/html/index.html'
   
   # Start IIIF API (Run on start)
   config.vm.provision "shell", run: 'always', inline: <<-SHELL

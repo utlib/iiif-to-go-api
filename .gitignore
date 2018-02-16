@@ -2,6 +2,7 @@
 .vagrant
 thumbs.db
 /iiifAPI/
+/mirador/
 
 loris/*
 !loris/.gitkeep
