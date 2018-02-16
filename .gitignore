@@ -2,3 +2,6 @@
 .vagrant
 thumbs.db
 iiifAPI/
+
+loris/
+!loris/.gitkeep
