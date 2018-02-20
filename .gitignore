@@ -1,4 +1,8 @@
 .DS_STORE
 .vagrant
 thumbs.db
-iiifAPI/
+/iiifAPI/
+/mirador/
+
+loris/*
+!loris/.gitkeep
