@@ -7,12 +7,12 @@ echo "IIIF API in a Box: Installing IIIF API..."
 cd /var/www
 if [ ! -d iiifAPI ]; then
 	echo "Provisioning from repository..."
-	git clone git@git.library.utoronto.ca:digitaltoolsmss/iiifAPI.git
+	git clone -q git@git.library.utoronto.ca:digitaltoolsmss/iiifAPI.git
 fi
 
 # Set up API
 cd iiifAPI
-pip install -r requirements.txt
+pip install -qq -r requirements.txt
 
 # Create user
 useradd -d /var/www/iiifAPI -s /sbin/false iiifapi
