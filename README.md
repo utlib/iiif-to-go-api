@@ -29,21 +29,21 @@ Note: If you do not already have VirtualBox and Vagrant installed, please instal
 
 If installation is successful, a browser window should appear notifying that IIIF in a Box is ready. The URL should be `http://localhost:8000`.
 
-*Command Line Usage: You can also start IIIF API to Go using `vagrant up`. When it is done setting up, simply browse to `http://localhost:8000`.*
+*Command Line Usage: You can also start IIIF API in a Box using `vagrant up`. When it is done setting up, simply browse to `http://localhost:8000`.*
 
 ## Usage
 
-To begin, simply run `start.bat` for Windows, `start.command` for Mac OS X, or `start.sh` for Ubuntu. The box should start up within a minute. When it is done starting up, a browser window should appear navigated to `http://localhost:8000` displaying the API's main interface.
+To begin, simply run `start.bat` for Windows, `start.command` for Mac OS X, or `start.sh` for Ubuntu. The box should start up within a minute. When it is done starting up, a browser window should appear navigated to `http://localhost:8000` displaying the API's main interface. The default login credentials are `superuser / goiiifapi`.
 
 To end, simply run `stop.bat` for Windows, `stop.command` for Mac OS X, or `stop.sh` for Ubuntu.
 
-*Command Line Usage: You can also start IIIF API to Go using `vagrant up` and shut it down using `vagrant halt`.*
+*Command Line Usage: You can also start IIIF API in a Box using `vagrant up` and shut it down using `vagrant halt`.*
 
 ## Uninstallation
 
 Run `uninstall.bat` if you use Windows, `uninstall.command` if you use Mac OS X or `uninstall.sh` if you use Ubuntu. This will remove the VirtualBox image generated during installation.
 
-*Command Line Usage: You can uninstall IIIF API to Go using `vagrant destroy`.*
+*Command Line Usage: You can uninstall IIIF API in a Box using `vagrant destroy`.*
 
 ## License
 
