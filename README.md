@@ -35,6 +35,10 @@ If installation is successful, a browser window should appear notifying that III
 
 To begin, simply run `start.bat` for Windows, `start.command` for Mac OS X, or `start.sh` for Ubuntu. The box should start up within a minute. When it is done starting up, a browser window should appear navigated to `http://localhost:8000` displaying the API's main interface. The default login credentials are `superuser / goiiifapi`.
 
+To add images to the build-in Loris server, simply drag image files into the `loris` shared directory. The IIIF Image URL prefix for images added this way is: `http://localhost:8111/loris/synced/<name of image plus extension>`
+
+To view your IIIF API's top-level collection in Mirador, visit `http://localhost:8222`.
+
 To end, simply run `stop.bat` for Windows, `stop.command` for Mac OS X, or `stop.sh` for Ubuntu.
 
 *Command Line Usage: You can also start IIIF API in a Box using `vagrant up` and shut it down using `vagrant halt`.*
