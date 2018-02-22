@@ -33,7 +33,7 @@ If installation is successful, a browser window should appear notifying that III
 
 ## Usage
 
-To begin, simply run `start.bat` for Windows, `start.command` for Mac OS X, or `start.sh` for Ubuntu. The box should start up within a minute. When it is done starting up, a browser window should appear navigated to `http://localhost:8000` displaying the API's main interface. The default login credentials are `superuser / goiiifapi`.
+To begin, simply run `start.bat` for Windows, `start.command` for Mac OS X, or `start.sh` for Ubuntu. The box should start up within a minute. When it is done starting up, a browser window should appear navigated to `http://localhost:8000` displaying the API's main interface. The default login credentials are `admin / adminPassword` for the administrator, and `staff / staffPassword` for the standard user.
 
 To add images to the build-in Loris server, simply drag image files into the `loris` shared directory. The IIIF Image URL prefix for images added this way is: `http://localhost:8111/loris/synced/<name of image plus extension>`
 

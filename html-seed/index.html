@@ -6,11 +6,11 @@
     <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
     <title>Mirador Viewer for IIIF API in a Box</title>
     <style type="text/css">
-     #viewer {
-       width: 100%;
-       height: 100%;
-       position: fixed;
-     }
+      #viewer {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
     </style>
   </head>
   <body>
@@ -19,17 +19,22 @@
     <script src="mirador/mirador.min.js"></script>
     <script type="text/javascript">
 
-     $(function() {
-       myMiradorInstance = Mirador({
-         id: "viewer",
-         layout: "1x1",
-         buildPath: "mirador/",
-         data: [
-           { collectionUri: "http://localhost:8000/collections", location: "IIIF API in a Box"}
-         ],
-         windowObjects: []
-       });
-     });
+      $(function() {
+        myMiradorInstance = Mirador({
+          id: "viewer",
+          layout: "1x1",
+          buildPath: "mirador/",
+          data: [
+            { collectionUri: "http://localhost:8000/collections", location: "IIIF API in a Box" },
+		    { manifestUri: "http://localhost:8000/anatomia:RBAI001/manifest", location: "University of Toronto Medical Sciences" },
+			{ manifestUri: "http://localhost:8000/heritageutm:1/manifest", location: "University of Toronto Mississauga" },
+		    { manifestUri: "http://localhost:8000/fisher2:115/manifest", location: "Fisher Rare Books Library" }
+          ],
+          windowObjects: [],
+		  preserveManifestOrder: true,
+		  openManifestsPage: true
+        });
+      });
     </script>
   </body>
 </html>

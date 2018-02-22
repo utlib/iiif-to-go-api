@@ -56,5 +56,5 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "loris", "/usr/local/share/images/synced"
   
   # Done message
-  config.vm.post_up_message = "IIIF API to Go is ready! Visit localhost:8000 on your browser to get started."
+  config.vm.post_up_message = "IIIF API to Go is ready! Visit localhost:8000 on your browser to get started with IIIF API, or localhost:8222 to view your API's data via Mirador."
 end
