@@ -1,11 +1,8 @@
 #!/bin/bash
-apiurl="http://localhost:8000"
-miradorurl="http://localhost:8222"
+splashurl="`dirname $0`/splash/index.html"
 vagrant up || exit 127
 if [ ! -z `which xdg-open` ]; then
-	xdg-open "$apiurl"
-	xdg-open "$miradorurl"
+	xdg-open "$splashurl"
 elif [ ! -z `which open` ]; then
-	open "$apiurl"
-	open "$miradorurl"
+	open "$splashurl"
 fi

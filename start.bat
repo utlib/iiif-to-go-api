@@ -1,3 +1,3 @@
 @echo off
 
-vagrant up && start "" "http://localhost:8000" && start "" "http://localhost:8222"
+vagrant up && start "" "%~dp0\splash\index.html"
