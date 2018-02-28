@@ -12,24 +12,24 @@ wget -q --no-check-certificate https://github.com/loris-imageserver/loris/raw/de
 chmod 755 kdu_expand
 
 # Python and image library dependencies
-apt-get install -qqy libjpeg8 libjpeg8-dev libfreetype6 libfreetype6-dev zlib1g-dev liblcms2-2 liblcms2-dev liblcms2-utils libtiff5-dev > /dev/null
+apt-get install -qqy libjpeg8 libjpeg8-dev libfreetype6 libfreetype6-dev zlib1g-dev liblcms2-2 liblcms2-dev liblcms2-utils libtiff5-dev > /dev/null 2>&1
 ln -s /usr/lib/`uname -i`-linux-gnu/libfreetype.so /usr/lib/
 ln -s /usr/lib/`uname -i`-linux-gnu/libjpeg.so /usr/lib/
 ln -s /usr/lib/`uname -i`-linux-gnu/libz.so /usr/lib/
 ln -s /usr/lib/`uname -i`-linux-gnu/liblcms.so /usr/lib/
 ln -s /usr/lib/`uname -i`-linux-gnu/libtiff.so /usr/lib/
 echo "/usr/local/lib" >> /etc/ld.so.conf && ldconfig
-apt-get install -qqy python-dev python-setuptools python-pip > /dev/null
-pip install -qq --upgrade pip
-pip uninstall -qq PIL
-pip uninstall -qq Pillow
-apt-get purge -qq python-imaging > /dev/null
-pip install -qq Werkzeug
-pip install -qq configobj
-pip install -qq Pillow
+apt-get install -qqy python-dev python-setuptools python-pip > /dev/null 2>&1
+pip install -qq --upgrade pip > /dev/null 2>&1
+pip uninstall -qq PIL > /dev/null 2>&1
+pip uninstall -qq Pillow > /dev/null 2>&1
+apt-get purge -qq python-imaging > /dev/null 2>&1
+pip install -qq Werkzeug > /dev/null 2>&1
+pip install -qq configobj > /dev/null 2>&1
+pip install -qq Pillow > /dev/null 2>&1
 
 # WSGI
-apt-get install -qqy libapache2-mod-wsgi > /dev/null
+apt-get install -qqy libapache2-mod-wsgi > /dev/null 2>&1
 
 # Loris packages
 cd /opt
@@ -45,7 +45,7 @@ useradd -d /var/www/loris2 -s /sbin/false loris
 cd /opt/loris
 
 # Install
-./setup.py install > /dev/null
+./setup.py install > /dev/null 2>&1
 cp etc/loris2.conf /etc/loris2.conf
 
 # Loris-Apache integration
@@ -67,6 +67,6 @@ echo '<VirtualHost *:81>
 		Allow from all
 		Require all granted
 </Directory>' > sites-available/loris.conf
-a2enmod expires > /dev/null
-a2ensite loris > /dev/null
-service apache2 restart > /dev/null
+a2enmod expires > /dev/null 2>&1
+a2ensite loris > /dev/null 2>&1
+service apache2 restart > /dev/null 2>&1
