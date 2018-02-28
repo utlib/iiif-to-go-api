@@ -8,7 +8,7 @@ cd /var/www
 if [ ! -d mirador ]; then
 	echo "Provisioning from GitHub Mirador 2.6.0..."
 	wget -q --no-check-certificate https://github.com/ProjectMirador/mirador/releases/download/v2.6.0/build.zip
-	unzip -qq build.zip 'mirador/*' -d mirador
+	unzip -qq build.zip 'mirador/*' -d mirador > /dev/null 2>&1
 	rm -Rf build.zip
 fi
 
