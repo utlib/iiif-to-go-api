@@ -7,7 +7,7 @@ echo "IIIF API in a Box: Installing IIIF API..."
 cd /var/www
 if [ ! -d iiifAPI ]; then
 	echo "Provisioning from repository..."
-	git clone -q git@git.library.utoronto.ca:digitaltoolsmss/iiifAPI.git
+	git clone -q https://github.com/utlib/utl_iiif_api.git iiifAPI
 fi
 
 # Set up API
