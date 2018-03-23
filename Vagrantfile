@@ -47,13 +47,17 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "html-seed/index.html", destination: "/home/vagrant/index.html"
   config.vm.provision "shell", inline: 'mv /home/vagrant/index.html /var/www/html/index.html'
   
+  # Add splash
+  config.vm.provision "file", source: "splash", destination: "/home/vagrant/splash"
+  config.vm.provision "shell", inline: 'mv /home/vagrant/splash /var/www/html/splash'
+  
   # Start IIIF API (Run on start)
   config.vm.provision "shell", run: 'always', inline: <<-SHELL
 	service mongod start
   SHELL
   
   # Provision shared paths
-  config.vm.synced_folder "loris", "/usr/local/share/images/synced"
+  config.vm.synced_folder "loris", "/usr/local/share/images/synced", create: true
   
   # Done message
   config.vm.post_up_message = "IIIF API to Go is ready! Visit localhost:8000 on your browser to get started with IIIF API, or localhost:8222 to view your API's data via Mirador."
