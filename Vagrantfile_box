@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrant configuration header: DO NOT CHANGE
+Vagrant.configure("2") do |config|
+  # Forwarded ports
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 81, host: 8111
+  config.vm.network "forwarded_port", guest: 80, host: 8222
+  
+  # Start IIIF API (Run on start)
+  config.vm.provision "shell", run: 'always', inline: <<-SHELL
+	service mongod start
+  SHELL
+  
+  # Provision shared paths
+  config.vm.synced_folder "loris", "/usr/local/share/images/synced", create: true
+  
+  # Done message
+  config.vm.post_up_message = "IIIF API to Go is ready! Visit localhost:8000 on your browser to get started with IIIF API, or localhost:8222 to view your API's data via Mirador."
+end
