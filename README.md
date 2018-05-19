@@ -5,7 +5,7 @@ IIIF to Go (API Version) is a set of Vagrant scripts that set up portable Virtua
 ## Bundled Software
 
 - [IIIF API](https://github.com/utlib/utl_iiif_api)
-- [Loris 2.0](https://github.com/loris-imageserver/loris)
+- [Loris 2.3](https://github.com/loris-imageserver/loris)
 - [Mirador 2.6](https://github.com/utlib/mirador/releases) (with collection tree patch)
 
 ## System Requirements

@@ -33,10 +33,10 @@ apt-get install -qqy libapache2-mod-wsgi > /dev/null 2>&1
 
 # Loris packages
 cd /opt
-wget -q --no-check-certificate https://github.com/loris-imageserver/loris/archive/2.0.1.zip
-unzip -qq 2.0.1.zip
-mv loris-2.0.1/ loris/
-rm 2.0.1.zip
+wget -q --no-check-certificate https://github.com/loris-imageserver/loris/archive/v2.3.2.zip
+unzip -qq v2.3.2.zip
+mv loris-2.3.2/ loris/
+rm v2.3.2.zip
 
 # Loris user
 useradd -d /var/www/loris2 -s /sbin/false loris
