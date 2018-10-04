@@ -17,6 +17,9 @@ pip install -qq -r requirements.txt
 # Create user
 useradd -d /var/www/iiifAPI -s /sbin/false iiifapi
 
+# Make the directory accessible to this user
+chown -R iiifapi:iiifapi /var/www/iiifAPI
+
 # API-Apache integration
 cd /etc/apache2
 echo 'Listen *:8000' >> ports.conf
